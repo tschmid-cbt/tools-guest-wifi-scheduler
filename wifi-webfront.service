@@ -1,0 +1,11 @@
+[Unit]
+Description = Front End for wifi enabler
+After = network.target
+ 
+[Service]
+WorkingDirectory=/opt/wifi-scheduler
+ExecStart = /usr/bin/gunicorn --workers 3 --bind 127.0.0.1:5000 -m 007 wsgi 
+Restart=always 
+ 
+[Install]
+WantedBy = multi-user.target

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>CBT Guest Wifi Scheduler</title>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../static/favicon.ico">
+    <link href="../static/main.css" rel="stylesheet">
+    <title>CBT Guest Wifi Scheduler</title>
+  </head>
+    <body>
+      <div class="container">
+        <table border=1 style="margin: 0px auto;">
+           <thead>
+              <td>Entry</td>
+              <td>User</td>
+              <td>Start Time</td>
+              <td>End Time</td>
+              <td>Duration</td>
+              <td>Password</td>
+              <td>SSID</td>
+           </thead>
+
+           {% for row in rows %}
+              <tr>
+                 <td>{{row["id"]}}</td>
+                 <td>{{row["user"]}}</td>
+                 <td>{{row["starttime"]}}</td>
+                 <td>{{row["endtime"]}}</td>
+                 <td>{{row["duration"]}}</td>
+                 <td>{{row["password"]}}</td>
+                 <td>CBT-Guest</td>
+              </tr>
+           {% endfor %}
+        </table>
+        <form action="{{url_for('view_schedule')}}" method="POST">
+          <h3>To Delete Entry Select # and hit Delete</h3>
+          <input title="Remove Entry" placeholder="Entry" type="number" min="1" name="Entry" required> <br>
+          </input>
+          <button type="submit"> Delete </button>
+        </form>
+        <form action="{{url_for('view_schedule')}}" method="GET">
+          <button type="view"> Refresh </button>
+        </form>
+        <form action="{{url_for('index')}}" method="GET">
+          <button type="view"> Back </button>
+        </form>
+      </div>
+    </body>
+</html>

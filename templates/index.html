@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="schedule the enable/disable of the guest wifi network configured on the WLAN controller">
+    <meta name="author" content="Troy Schmid">
+    <link rel="icon" href="../static/favicon.ico">
+
+    <title>CBT Guest Wifi Scheduler</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/cover.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h4 class="masthead-brand">CBT Guest Wifi Scheduler</h4>
+              <nav class="nav nav-masthead">
+                <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link" href="/view_schedule">View Schedule</a>
+                <a class="nav-link" href="/wifi_status">Wifi Status</a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Schedule Guest Wifi</h1>
+            <p class="lead">Complete all fields for Guest wifi access<br>
+            Format is Date, Time (12hr clock - AM/PM) and Duration</p>
+            <p class="lead">
+              <div class="container">
+                <form action="/success" method="POST">
+                  <div class="row bottom-buffer">
+                    <div class="col-md-4 offset-md-4">
+                      <input class="form-control" data-provide="datepicker" title="Place_holder" placeholder="DATE" type="date" name="date" required/><br>
+                    </div>
+                  </div>
+                  <div class="row bottom-buffer">
+                    <div class="col-md-4 offset-md-4">
+                      <input class="form-control" title="Start Time" placeholder="TIME" type="time" name="time" required/> <br>
+                    </div>
+                  </div>
+                  <div class="row bottom-buffer">
+                    <div class="col-md-4 offset-md-4">
+                      <input class="form-control" title="enter duration in hours" placeholder="# of hours WIFI is needed" type="number" min="1", max="8" name="numberOfHours" required/> <br>
+                    </div>
+                  </div>
+                  <button class="btn btn-lg btn-secondary btn-cbt" formmethod="post">Submit</button>
+                </form>
+                </div>
+              </div>
+            </p>
+          <div class="mastfoot">
+            <div class="inner">
+              <p>For more info contact <a href="mailto:itteam@cbtnuggets.com?Subject=CBT%20Guest%20Wifi">IT Team</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../static/slim.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../static/jquery.min.js"><\/script>')</script>
+    <script src="../static/tether.min.js" ></script>
+    <script src="../static/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../static/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

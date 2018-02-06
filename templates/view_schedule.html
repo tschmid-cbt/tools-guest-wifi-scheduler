@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="schedule the enable/disable of the guest wifi network configured on the WLAN controller">
+    <meta name="author" content="Troy Schmid">
+    <link rel="icon" href="../static/favicon.ico">
+
+    <title>CBT Guest Wifi Scheduler</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/cover.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h4 class="masthead-brand">CBT Guest Wifi Scheduler</h4>
+              <nav class="nav nav-masthead">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link active" href="/view_schedule">View Schedule</a>
+                <a class="nav-link" href="/wifi_status">Wifi Status</a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Current Schedule</h1>
+          </div>
+            <div class="container">
+              <table border=1 style="margin: 0px auto;">
+                 <thead>
+                    <td>Entry</td>
+                    <td>User</td>
+                    <td>Start Time</td>
+                    <td>End Time</td>
+                    <td>Duration</td>
+                    <td>Password</td>
+                    <td>SSID</td>
+                 </thead>
+
+                 {% for row in rows %}
+                    <tr>
+                       <td>{{row["id"]}}</td>
+                       <td>{{row["user"]}}</td>
+                       <td>{{row["starttime"]}}</td>
+                       <td>{{row["endtime"]}}</td>
+                       <td>{{row["duration"]}}</td>
+                       <td>{{row["password"]}}</td>
+                       <td>CBT-Guest</td>
+                    </tr>
+                 {% endfor %}
+              </table>
+            </div>
+            <div class="container">
+              <form action="/view_schedule" method="POST">
+                <h3>Delete from scedule by Entry #</h3>
+              <div class="row bottom-buffer">
+                <div class="col-md-4 offset-md-4">
+                  <input class="col-md-4 offset-md-4 form-control" title="Remove Entry" placeholder="Entry" type="number" min="1" name="Entry" required/> <br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 offset-md-4">
+                  <button class="btn btn-lg btn-secondary btn-cbt" type="submit" formmethod="post">Delete</button><br>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="mastfoot">
+            <div class="inner">
+              <p>For more info contact <a href="mailto:itteam@cbtnuggets.com?Subject=CBT%20Guest%20Wifi">IT Team</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../static/slim.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../static/jquery.min.js"><\/script>')</script>
+    <script src="../static/tether.min.js" ></script>
+    <script src="../static/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../static/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

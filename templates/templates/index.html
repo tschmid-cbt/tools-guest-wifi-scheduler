@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>CBT Guest Wifi Scheduler</title>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../static/favicon.ico">
+    <link href="../static/main.css" rel="stylesheet">
+    <title>CBT Guest Wifi Scheduler</title>
+  </head>
+    <body>
+      <div class="container">
+            <h1>CBT Guest Wifi Scheduler</h1>
+            <h3>Complete all fields for Guest wifi access<br>
+            Format is Date, Time (12hr clock - AM/PM) and Duration</h3>
+              <form action="{{url_for('success')}}" method="POST">
+                <input title="Place_holder" placeholder="DATE" type="date" name="date" required> <br>
+                <input title="Start Time" placeholder="TIME" type="time" name="time" required> <br>
+                <input title="enter duration in hours" placeholder="# of hours WIFI is needed" type="number" min="1", max="8" name="numberOfHours" required> <br>
+                </input>
+                <button type="submit"> Submit </button>
+              </form>
+              <form action="{{url_for('view_schedule')}}" method="GET">
+                <button type="view"> View Schedule </button>
+              </form>
+              <form action="{{url_for('wifi_status')}}" method="GET">
+              <button type="submit" class="btn btn-primary">Wifi Status</button>
+            </form>
+      </div>
+    </body>
+</html>

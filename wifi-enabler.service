@@ -1,0 +1,11 @@
+[Unit]
+Description = Schedule manager for wifi-enabler
+After = network.target wifi-webfront.service
+ 
+[Service]
+WorkingDirectory=/opt/wifi-scheduler
+ExecStart = /usr/bin/python3.6 wifi_enabler.py
+Restart=always 
+ 
+[Install]
+WantedBy = multi-user.target

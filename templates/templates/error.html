@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>CBT Guest Wifi Scheduler</title>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../static/favicon.ico">
+    <link href="../static/main.css" rel="stylesheet">
+    <title>CBT Guest Wifi Scheduler</title>
+  </head>
+    <body>
+      <div class="container">
+        <p>Error: schedule overlaps with existing entry {{ error }} <br>
+          Try deleting and adding again if times are incorrect. <br>
+          <form action="{{url_for('view_schedule')}}" method="GET">
+            <button type="view"> View Schedule </button>
+          </form>
+        </p>
+      </div>
+    </body>
+</html>
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Guest Wifi Scheduler</title>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../static/favicon.ico">
+    <link href="../static/main.css" rel="stylesheet">
+    <title>CBT Guest Wifi Scheduler</title>
+  </head>
+    <body>
+      <div class="container">
+        <h1>CBT Guest Wifi Scheduler</h1>
+      <h2>Wifi {{ text_out }}</h2>
+      <form action="{{url_for('view_schedule')}}" method="GET">
+        <button type="view"> View Schedule </button>
+      </form>
+      <form action="{{url_for('index')}}" method="GET">
+        <button type="view"> Back </button>
+      </form>
+    </div>
+    </body>
+</html>
