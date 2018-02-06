@@ -2,7 +2,9 @@
 
 This tool runs on a server at HQ and allows anyone with an AD account to schedule the Guest WIFI for up to 8 hours.  The WIFI password is rolled each time and emailed to the user & the IT team.
 
-[[https://github.com/tschmid-cbt/tools-guest-wifi-scheduler/images/cbt-guest-index.png|alt=screenshot]]
+<p align="center">
+  <img src="https://github.com/tschmid-cbt/tools-guest-wifi-scheduler/images/cbt-guest-index.png|alt=screenshot" alt="Screenshot">
+</p>
 
 ### Prerequisites
 
